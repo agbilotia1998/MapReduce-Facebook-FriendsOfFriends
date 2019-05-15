@@ -1,0 +1,8 @@
+Procedure for getting output:
+
+1. The data is scraped from facebook using selenium webdriver.
+2. The scraped data is preprocessed using script present in preprocessing directory.
+3. The output file from preprocessing script, here(inputListMore.txt) is saved in input directory.
+4. The input file is copied to hadoop file system and the procedure for finding friends of friends is executed on this file.
+7. The procedure for finding friends of friends execute in two stages namely Map and Reduce wherein Map, the two lists for every pair of friends is created and in Reduce the overlapping friends of two lists are extracted and counted.
+8. The output is extracted from hdfs and stored at local system in output directory under MutualFriendsMore directory.
